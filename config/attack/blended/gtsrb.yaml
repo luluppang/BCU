@@ -1,0 +1,24 @@
+amp: False
+device: cuda:0
+attack_label_trans: all2one
+attack_target:
+dataset: gtsrb
+dataset_path: ../data
+val_frac: 0.398
+
+frequency_save: 50
+batch_size: 128
+lr: 0.01
+lr_scheduler: CosineAnnealingLR
+model: preactresnet18
+pratio: 0.1
+random_seed: 0
+client_optimizer: sgd
+sgd_momentum: 0.9
+wd: 0.0005
+attack: blended
+epochs: 50
+attack_trigger_img_path: ../resource/blended/cifar10_random_pixels.jpeg
+# just as in bdzoo1
+attack_train_blended_alpha: 0.2
+attack_test_blended_alpha: 0.2

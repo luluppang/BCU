@@ -1,0 +1,20 @@
+amp: False
+device: cuda:0
+attack_label_trans: all2one
+attack_target: 0
+client_optimizer: sgd
+dataset: gtsrb
+dataset_path: ../data
+frequency_save: 50
+batch_size: 128
+lr: 0.01
+lr_scheduler: CosineAnnealingLR
+model: preactresnet18
+pratio: 0.8
+random_seed: 0
+sgd_momentum: 0.9
+wd: 0.0005
+epochs: 50
+
+patch_mask_path: ../resource/badnet/cifar10_four_corners_3by3_blackwhite.npy
+attack_train_replace_imgs_path: ../resource/label_consistent/adv_datasets/craft_gtsrb_comp.npz

@@ -1,0 +1,53 @@
+amp: False
+device: cuda:0
+
+client_optimizer: sgd
+frequency_save: 100
+batch_size: 64
+lr: 0.025
+lr_scheduler: CosineAnnealingLR
+model: preactresnet18
+pratio: 0.05
+random_seed: 0
+sgd_momentum: 0.9
+wd: 0.0005
+epochs: 100
+
+dataset: imagenet10
+dataset_path: ../data
+val_frac: 300
+attack_label_trans: all2one
+attack_target: 0
+attack: fix_patch
+# the patch has 3 * 3 and 1 distance from the edge of img as in bdzoo1
+#attack_trigger_loc:
+#  - - 29
+#    - 29
+#  - - 29
+#    - 30
+#  - - 29
+#    - 31
+#  - - 30
+#    - 29
+#  - - 30
+#    - 30
+#  - - 30
+#    - 31
+#  - - 31
+#    - 29
+#  - - 31
+#    - 30
+#  - - 31
+#    - 31
+#trigger_ptn:
+#  - 255
+#  - 255
+#  - 255
+#  - 255
+#  - 255
+#  - 255
+#  - 255
+#  - 255
+#  - 255
+patch_mask_path: ../resource/badnet/imagenet10_random_15by15_blackwhite.npy
+
